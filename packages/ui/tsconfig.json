@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@monorepo/tsconfig/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": { "@ui/*": ["./src/*"] }
+  },
+  "exclude": ["node_modules", "src/tests"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.json",
+    "./components.json"
+  ]
+}

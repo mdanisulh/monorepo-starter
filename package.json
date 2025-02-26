@@ -1,0 +1,38 @@
+{
+  "name": "monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "add-shadcn-component": "turbo add-shadcn-component --filter=@monorepo/ui --",
+    "build": "turbo build",
+    "check": "biome check",
+    "check:fix": "biome check --write",
+    "clean": "turbo clean && git clean -xdf .turbo node_modules",
+    "commit": "czg",
+    "dev": "turbo dev",
+    "format": "biome format",
+    "format:fix": "biome format --write",
+    "lint": "biome lint",
+    "lint:fix": "biome lint --write",
+    "sort-package-json": "sort-package-json \"**/package.json\" && bun check:fix",
+    "start": "turbo start",
+    "typecheck": "turbo typecheck"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@commitlint/cli": "^19.7.1",
+    "commitlint-config-gitmoji": "^2.3.1",
+    "czg": "^1.11.0",
+    "lefthook": "1.11.0",
+    "sort-package-json": "^2.14.0",
+    "turbo": "^2.4.2",
+    "typescript": "5.7.3"
+  },
+  "packageManager": "bun@1.2.3",
+  "engines": {
+    "node": ">=18"
+  }
+}
