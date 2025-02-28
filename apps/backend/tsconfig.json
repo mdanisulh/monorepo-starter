@@ -2,8 +2,9 @@
   "extends": "@monorepo/tsconfig/base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx"
+    "jsxImportSource": "hono/jsx",
+    "paths": { "@/*": ["./src/*"] }
   },
-  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.json"],
+  "include": ["src/**/*.ts", "src/**/*.js", "**/*.json"],
   "exclude": ["node_modules"]
 }
