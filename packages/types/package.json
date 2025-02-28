@@ -5,11 +5,14 @@
   "license": "MIT",
   "type": "module",
   "exports": {
-    ".": "./src"
+    ".": "./src/index.ts"
   },
   "scripts": {
     "clean": "git clean -xdf .turbo node_modules",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@monorepo/backend": "workspace:*"
   },
   "devDependencies": {
     "@monorepo/tsconfig": "workspace:*"
