@@ -17,19 +17,21 @@
     "format:fix": "biome format --write",
     "lint": "biome lint",
     "lint:fix": "biome lint --write",
-    "sort-package-json": "sort-package-json \"**/package.json\" && bun check:fix",
+    "sort-package-json": "sort-package-json \"**/package.json\"",
     "start": "turbo start",
-    "typecheck": "turbo typecheck"
+    "typecheck": "turbo typecheck",
+    "workspaces": "turbo workspaces workspaces:root --continue --concurrency=1 -- ",
+    "workspaces:root": "bun"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@commitlint/cli": "^19.7.1",
     "commitlint-config-gitmoji": "^2.3.1",
     "czg": "^1.11.0",
-    "lefthook": "1.11.0",
+    "lefthook": "1.11.2",
     "sort-package-json": "^2.15.0",
     "turbo": "^2.4.4",
-    "typescript": "5.7.3"
+    "typescript": "5.8.2"
   },
   "packageManager": "bun@1.2.4",
   "engines": {

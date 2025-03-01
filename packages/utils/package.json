@@ -9,7 +9,8 @@
   },
   "scripts": {
     "clean": "git clean -xdf .turbo node_modules",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "workspaces": "bun"
   },
   "devDependencies": {
     "@monorepo/tsconfig": "workspace:*"

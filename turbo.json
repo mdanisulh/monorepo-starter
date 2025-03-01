@@ -22,6 +22,12 @@
     },
     "clean": {
       "cache": false
+    },
+    "workspaces": {
+      "cache": false
+    },
+    "//#workspaces:root": {
+      "cache": false
     }
   }
 }
