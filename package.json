@@ -1,10 +1,22 @@
 {
   "name": "monorepo",
   "version": "0.0.0",
-  "private": true,
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@commitlint/cli": "^19.8.0",
+    "commitlint-config-gitmoji": "^2.3.1",
+    "czg": "^1.11.1",
+    "lefthook": "^1.11.3",
+    "syncpack": "^13.0.3",
+    "turbo": "^2.4.4",
+    "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
   "license": "MIT",
-  "type": "module",
-  "workspaces": ["apps/*", "packages/*"],
+  "packageManager": "bun@1.2.4",
+  "private": true,
   "scripts": {
     "add-shadcn-component": "turbo add-shadcn-component --filter=@monorepo/ui --",
     "build": "turbo build",
@@ -17,24 +29,12 @@
     "format:fix": "biome format --write",
     "lint": "biome lint",
     "lint:fix": "biome lint --write",
-    "sort-package-json": "sort-package-json \"**/package.json\"",
+    "sort-package-json": "syncpack format",
     "start": "turbo start",
     "typecheck": "turbo typecheck",
     "workspaces": "turbo workspaces workspaces:root --continue --concurrency=1 -- ",
     "workspaces:root": "bun"
   },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@commitlint/cli": "^19.7.1",
-    "commitlint-config-gitmoji": "^2.3.1",
-    "czg": "^1.11.0",
-    "lefthook": "1.11.2",
-    "sort-package-json": "^2.15.0",
-    "turbo": "^2.4.4",
-    "typescript": "5.8.2"
-  },
-  "packageManager": "bun@1.2.4",
-  "engines": {
-    "node": ">=18"
-  }
+  "type": "module",
+  "workspaces": ["apps/*", "packages/*"]
 }

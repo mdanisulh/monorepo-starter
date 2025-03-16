@@ -1,21 +1,21 @@
 {
   "name": "@monorepo/types",
   "version": "0.0.0",
-  "private": true,
-  "license": "MIT",
-  "type": "module",
-  "exports": {
-    ".": "./src/index.ts"
-  },
-  "scripts": {
-    "clean": "git clean -xdf .turbo node_modules",
-    "typecheck": "tsc --noEmit",
-    "workspaces": "bun"
-  },
   "dependencies": {
     "@monorepo/backend": "workspace:*"
   },
   "devDependencies": {
     "@monorepo/tsconfig": "workspace:*"
-  }
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "clean": "git clean -xdf .turbo node_modules",
+    "typecheck": "tsc --noEmit",
+    "workspaces": "bun"
+  },
+  "type": "module"
 }
