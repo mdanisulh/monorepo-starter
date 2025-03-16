@@ -1,5 +1,18 @@
 # Monorepo Starter
 
+<a href="https://idx.google.com/import?url=https%3A%2F%2Fgithub.com%2Fmdanisulh%2Fmonorepo-starter">
+  <img
+    height="32"
+    alt="Open in IDX"
+    src="https://cdn.idx.dev/btn/open_purple_32.svg">
+</a>
+<a href="https://idx.google.com/new?template=https%3A%2F%2Fgithub.com%2Fmdanisulh%2Fmonorepo-starter">
+  <img
+    height="32"
+    alt="Export to IDX"
+    src="https://cdn.idx.dev/btn/export_purple_32.svg">
+</a>
+
 A modern TypeScript-based monorepo starter template built with Turborepo, Bun, and Biome.
 
 ## Features
