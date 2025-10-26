@@ -1,4 +1,5 @@
 /* eslint-disable */
+/** biome-ignore-all lint/suspicious/noExplicitAny: Auto generated file */
 
 // @ts-nocheck
 

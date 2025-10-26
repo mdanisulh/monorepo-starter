@@ -1,7 +1,7 @@
-import { createRouter } from "@/lib/create-app";
 import { createRoute, z } from "@hono/zod-openapi";
 import { ReasonPhrases, StatusCodes } from "http-status-codes";
-import packageJson from "../../package.json";
+import { createRouter } from "@/lib/create-app";
+import packageJson from "../../package.json" with { type: "json" };
 
 const router = createRouter()
   .openapi(
@@ -27,16 +27,15 @@ const router = createRouter()
         },
       },
     }),
-    (c) => {
-      return c.json(
+    (c) =>
+      c.json(
         {
           message: "API Service",
           version: packageJson.version,
           environment: c.env.NODE_ENV,
         },
         StatusCodes.OK,
-      );
-    },
+      ),
   )
   .openapi(
     createRoute({
@@ -59,9 +58,7 @@ const router = createRouter()
         },
       },
     }),
-    (c) => {
-      return c.json({ status: ReasonPhrases.OK }, StatusCodes.OK);
-    },
+    (c) => c.json({ status: ReasonPhrases.OK }, StatusCodes.OK),
   )
   .openapi(
     createRoute({

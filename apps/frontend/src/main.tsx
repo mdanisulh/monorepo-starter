@@ -1,6 +1,4 @@
-import { RouterProvider, createRouter } from "@tanstack/react-router";
-// biome-ignore lint/correctness/noUnusedImports: <explanation>
-import React from "react";
+import { createRouter, RouterProvider } from "@tanstack/react-router";
 import ReactDOM from "react-dom/client";
 import { routeTree } from "./routeTree.gen";
 

@@ -13,7 +13,7 @@ const EnvSchema = z.object({
 
 export type Env = z.infer<typeof EnvSchema>;
 
-export function parseEnv(data: any) {
+export function parseEnv(data: unknown) {
   const { data: env, error } = EnvSchema.safeParse(data);
 
   if (error) {

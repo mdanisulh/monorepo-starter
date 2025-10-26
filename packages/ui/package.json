@@ -11,10 +11,7 @@
     "tailwind-merge": "^3.0.2"
   },
   "devDependencies": {
-    "@monorepo/tsconfig": "workspace:*",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwindcss": "^4.0.14"
+    "@monorepo/tsconfig": "workspace:*"
   },
   "exports": {
     "./globals.css": "./src/styles/globals.css",

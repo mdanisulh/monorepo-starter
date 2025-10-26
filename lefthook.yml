@@ -1,7 +1,7 @@
 pre-commit:
   commands:
     check:
-      run: bun sort-package-json && bun biome check --write --no-errors-on-unmatched {staged_files}
+      run: bun sort-package-json && bun biome check --write --error-on-warnings --no-errors-on-unmatched --colors=off {staged_files}
       stage_fixed: true
 
 commit-msg:

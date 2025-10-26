@@ -1,47 +1,94 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true,
-    "defaultBranch": "main"
+  "$schema": "https://biomejs.dev/schemas/2.3.0/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on",
+        "useSortedAttributes": "on",
+        "useSortedProperties": "on"
+      }
+    }
+  },
+  "css": {
+    "parser": { "tailwindDirectives": true }
   },
   "files": {
     "ignoreUnknown": true,
-    "ignore": []
+    "includes": ["**"]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space"
   },
-  "organizeImports": {
-    "enabled": true
+  "html": {
+    "formatter": { "enabled": true }
+  },
+  "javascript": {
+    "formatter": { "quoteStyle": "double" }
   },
   "linter": {
     "enabled": true,
     "rules": {
+      "complexity": {
+        "noForEach": "on",
+        "noImplicitCoercions": "on",
+        "noUselessStringConcat": "on",
+        "noVoid": "on",
+        "useSimplifiedLogicExpression": "on",
+        "useWhile": "on"
+      },
+      "correctness": {
+        "noGlobalDirnameFilename": "on",
+        "noNestedComponentDefinitions": "on",
+        "noReactPropAssignments": "on",
+        "noUndeclaredDependencies": "on",
+        "noUndeclaredVariables": "on",
+        "useExhaustiveDependencies": "on",
+        "useHookAtTopLevel": "on",
+        "useImageSize": "on",
+        "useJsonImportAttributes": "on",
+        "useJsxKeyInIterable": "on"
+      },
+      "nursery": {
+        "noDeprecatedImports": "info",
+        "noEmptySource": "on",
+        "noFloatingPromises": "on",
+        "noImportCycles": "on",
+        "noJsxLiterals": "on",
+        "noMisusedPromises": "on",
+        "noReactForwardRef": "on",
+        "noShadow": "on",
+        "noUnnecessaryConditions": "on",
+        "noUnusedExpressions": "on",
+        "noUselessCatchBinding": "on",
+        "noUselessUndefined": "on",
+        "useConsistentArrowReturn": "on",
+        "useExhaustiveSwitchCases": "on"
+      },
+      "performance": { "noAwaitInLoops": "on" },
       "recommended": true,
       "style": {
         "noNonNullAssertion": "off",
-        "useImportType": "off"
-      },
-      "complexity": {
-        "noUselessStringConcat": "warn"
-      },
-      "correctness": {
-        "noUnusedImports": "warn",
-        "noUnusedVariables": "warn",
-        "noUnusedFunctionParameters": "warn"
+        "noUselessElse": "on",
+        "useAtIndex": "on",
+        "useImportType": "off",
+        "useReactFunctionComponents": "on"
       },
       "suspicious": {
-        "noConsoleLog": "warn",
-        "noExplicitAny": "off"
+        "noConsole": {
+          "level": "on",
+          "options": { "allow": ["error", "warn", "info"] }
+        },
+        "noUnassignedVariables": "on",
+        "noVar": "on",
+        "useErrorMessage": "on"
       }
     }
   },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "double"
-    }
+  "vcs": {
+    "clientKind": "git",
+    "defaultBranch": "main",
+    "enabled": true,
+    "useIgnoreFile": true
   }
 }

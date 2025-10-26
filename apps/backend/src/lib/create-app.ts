@@ -1,9 +1,9 @@
-import { parseEnv } from "@/env";
-import type { AppBindings, AppOpenAPI } from "@/lib/types";
-import { logger } from "@/middlewares/logger";
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { requestId } from "hono/request-id";
 import { ReasonPhrases, StatusCodes } from "http-status-codes";
+import { parseEnv } from "@/env";
+import type { AppBindings, AppOpenAPI } from "@/lib/types";
+import { logger } from "@/middlewares/logger";
 
 export function createRouter() {
   return new OpenAPIHono<AppBindings>({
@@ -30,12 +30,12 @@ export default function createApp() {
     })
     .use(requestId())
     .use(logger())
-    .notFound((c) => {
-      return c.json(
+    .notFound((c) =>
+      c.json(
         { message: `${ReasonPhrases.NOT_FOUND} - ${c.req.path}` },
         StatusCodes.NOT_FOUND,
-      );
-    })
+      ),
+    )
     .onError((err, c) => {
       c.var.logger.error(err);
       return c.json(

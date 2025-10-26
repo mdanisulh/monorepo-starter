@@ -1,6 +1,6 @@
-import type { AppOpenAPI } from "@/lib/types";
 import { apiReference } from "@scalar/hono-api-reference";
-import packageJSON from "../../package.json";
+import type { AppOpenAPI } from "@/lib/types";
+import packageJSON from "../../package.json" with { type: "json" };
 
 export default function openAPI(app: AppOpenAPI) {
   app.doc("/doc", {

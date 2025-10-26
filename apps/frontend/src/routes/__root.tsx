@@ -1,7 +1,5 @@
-import { Link, Outlet, createRootRoute } from "@tanstack/react-router";
+import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
-// biome-ignore lint/correctness/noUnusedImports: <explanation>
-import React from "react";
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -12,21 +10,21 @@ function RootComponent() {
     <>
       <div className="p-2 flex gap-2 text-lg">
         <Link
-          to="/"
+          activeOptions={{ exact: true }}
           activeProps={{
             className: "font-bold",
           }}
-          activeOptions={{ exact: true }}
+          to="/"
         >
-          Home
+          {"Home"}
         </Link>{" "}
         <Link
-          to="/about"
           activeProps={{
             className: "font-bold",
           }}
+          to="/about"
         >
-          About
+          {"About"}
         </Link>
       </div>
       <hr />

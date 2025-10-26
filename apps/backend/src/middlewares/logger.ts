@@ -1,9 +1,9 @@
-import type { AppBindings } from "@/lib/types";
 import type { Context, MiddlewareHandler } from "hono";
 import type { Env } from "hono-pino";
 import { pinoLogger } from "hono-pino";
 import pino from "pino";
 import pretty from "pino-pretty";
+import type { AppBindings } from "@/lib/types";
 
 export function logger() {
   return ((c, next) =>
