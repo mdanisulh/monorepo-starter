@@ -24,12 +24,11 @@
   "private": true,
   "scripts": {
     "build": "vite build",
-    "clean": "git clean -xdf .turbo node_modules",
+    "clean": "git clean -xdf node_modules",
     "dev": "vite --port=3001",
     "serve": "vite preview",
     "start": "vite",
-    "typecheck": "tsc --noEmit",
-    "workspaces": "bun"
+    "typecheck": "tsc --noEmit"
   },
   "type": "module"
 }

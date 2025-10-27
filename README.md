@@ -13,11 +13,11 @@
     src="https://cdn.idx.dev/btn/export_purple_32.svg">
 </a>
 
-A modern TypeScript-based monorepo starter template built with Turborepo, Bun, and Biome.
+A modern TypeScript-based monorepo starter template built with Nx, Bun, and Biome.
 
 ## Features
 
-- 📦 Monorepo structure using Turborepo for efficient task management
+- 📦 Monorepo structure using Nx for efficient task management
 - 🏗️ TypeScript support throughout the project
 - 🚀 React 19 frontend with TanStack Router
 - 🌐 Hono backend with OpenAPI documentation
@@ -29,7 +29,7 @@ A modern TypeScript-based monorepo starter template built with Turborepo, Bun, a
 
 ## Technologies
 
-- [Turborepo](https://turbo.build/repo)
+- [Nx](https://nx.dev/)
 - [Bun](https://bun.sh/)
 - [React](https://react.dev/)
 - [Hono](https://hono.dev/)
@@ -85,7 +85,8 @@ bun run dev
 # Build all applications
 bun run build
 
-# Start production server
+# Start production servers (per project)
+# For example
 bun run start
 ```
 

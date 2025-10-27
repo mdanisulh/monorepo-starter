@@ -7,8 +7,7 @@
     "access": "public"
   },
   "scripts": {
-    "clean": "git clean -xdf .turbo node_modules .tsbuildinfo",
-    "workspaces": "bun"
+    "clean": "git clean -xdf node_modules .tsbuildinfo"
   },
   "type": "module"
 }

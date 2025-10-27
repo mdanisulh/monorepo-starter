@@ -27,9 +27,8 @@
   "private": true,
   "scripts": {
     "add-shadcn-component": "bun x shadcn@latest add",
-    "clean": "git clean -xdf .turbo node_modules",
-    "typecheck": "tsc --noEmit",
-    "workspaces": "bun"
+    "clean": "git clean -xdf node_modules",
+    "typecheck": "tsc --noEmit"
   },
   "type": "module"
 }

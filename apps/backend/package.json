@@ -21,11 +21,10 @@
   "private": true,
   "scripts": {
     "build": "vite build",
-    "clean": "git clean -xdf .turbo node_modules",
+    "clean": "git clean -xdf node_modules",
     "dev": "vite",
     "start": "node dist/index.js",
-    "typecheck": "tsc --noEmit",
-    "workspaces": "bun"
+    "typecheck": "tsc --noEmit"
   },
   "type": "module"
 }

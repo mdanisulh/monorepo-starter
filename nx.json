@@ -1,0 +1,71 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "cli": {
+    "packageManager": "bun"
+  },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "packages"
+  },
+  "useDaemonProcess": true,
+  "namedInputs": {
+    "sharedGlobals": [
+      "{workspaceRoot}/nx.json",
+      "{workspaceRoot}/package.json",
+      "{workspaceRoot}/bun.lock",
+      "{workspaceRoot}/.env*",
+      "{workspaceRoot}/biome.json",
+      "{workspaceRoot}/packages/tsconfig/base.json"
+    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/*.spec.*",
+      "!{projectRoot}/**/*.test.*",
+      "!{projectRoot}/**/__tests__/**",
+      "!{projectRoot}/**/*.md"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"],
+      "outputs": [
+        "{projectRoot}/dist/**",
+        "{projectRoot}/build/**",
+        "{projectRoot}/.next/**",
+        "!{projectRoot}/.next/cache/**"
+      ],
+      "cache": true
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck"],
+      "inputs": ["default", "^default"],
+      "cache": true
+    },
+    "test": {
+      "dependsOn": ["^test"],
+      "inputs": ["default", "^default"],
+      "outputs": ["{projectRoot}/coverage/**"],
+      "cache": true
+    },
+    "dev": {
+      "cache": false
+    },
+    "start": {
+      "cache": false
+    },
+    "add-shadcn-component": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    },
+    "workspaces": {
+      "cache": false
+    }
+  },
+  "defaultBase": "main",
+  "useInferencePlugins": true,
+  "parallel": 3
+}

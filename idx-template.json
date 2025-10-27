@@ -1,6 +1,6 @@
 {
   "name": "Monorepo Starter",
-  "description": "A modern TypeScript-based monorepo starter template built with Turborepo, Bun, and Biome",
+  "description": "A modern TypeScript-based monorepo starter template built with Nx, Bun, and Biome",
   "icon": "https://www.gstatic.com/images/branding/productlogos/idx/v1/192px.svg",
   "params": []
 }

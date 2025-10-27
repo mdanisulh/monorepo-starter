@@ -2,13 +2,13 @@
   "name": "monorepo",
   "version": "0.0.0",
   "devDependencies": {
-    "@biomejs/biome": "^2.3.0",
+    "@biomejs/biome": "^2.3.1",
     "@commitlint/cli": "^20.1.0",
     "commitlint-config-gitmoji": "^2.3.1",
     "czg": "^1.12.0",
     "lefthook": "^2.0.1",
+    "nx": "^22.0.1",
     "syncpack": "^13.0.4",
-    "turbo": "^2.5.8",
     "typescript": "^5.9.3"
   },
   "engines": {
@@ -18,22 +18,20 @@
   "packageManager": "bun@1.2.4",
   "private": true,
   "scripts": {
-    "add-shadcn-component": "turbo add-shadcn-component --filter=@monorepo/ui --",
-    "build": "turbo build",
+    "add-shadcn-component": "nx run @monorepo/ui:add-shadcn-component --",
+    "build": "nx run-many -t build",
     "check": "biome check",
     "check:fix": "biome check --write",
-    "clean": "turbo clean && git clean -xdf .turbo node_modules",
+    "clean": "nx reset && nx exec -- bun clean && git clean -xdf node_modules",
     "commit": "czg -S -s",
-    "dev": "turbo dev",
+    "dev": "nx run-many -t dev --parallel",
     "format": "biome format",
     "format:fix": "biome format --write",
     "lint": "biome lint",
     "lint:fix": "biome lint --write",
     "sort-package-json": "syncpack format",
-    "start": "turbo start",
-    "typecheck": "turbo typecheck",
-    "workspaces": "turbo workspaces workspaces:root --continue --concurrency=1 -- ",
-    "workspaces:root": "bun"
+    "start": "nx run-many -t start",
+    "typecheck": "nx run-many -t typecheck"
   },
   "type": "module",
   "workspaces": [
